@@ -2,15 +2,11 @@
 
 A Streamlit app that uses YOLOv8 for object detection and ViT for classification on fitness-related images.
 
-app.py: Streamlit interface for the application
-
-download_models.py: Script to automatically download YOLOv8s and ViT model weights
-
-utils.py: Contains functions to run YOLOv8s and ViT on uploaded images
-
-requirements.txt: Lists all necessary Python packages
-
-README.md: Provides setup and deployment instructions
+1. app.py: Streamlit interface for the application
+2. download_models.py: Script to automatically download YOLOv8s and ViT model weights
+3. utils.py: Contains functions to run YOLOv8s and ViT on uploaded images
+4. requirements.txt: Lists all necessary Python packages
+5. README.md: Provides setup and deployment instructions
 
 ## Setup
 
