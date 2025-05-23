@@ -26,9 +26,20 @@ if uploaded_file is not None:
     img_bgr = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
     img_rgb = cv2.cvtColor(img_bgr, cv2.COLOR_BGR2RGB)
 
+    # === Resize if too big ===
+    MAX_SIZE = 640
+    if max(img_rgb.shape[:2]) > MAX_SIZE:
+        scale = MAX_SIZE / max(img_rgb.shape[:2])
+        img_rgb = cv2.resize(img_rgb, (0, 0), fx=scale, fy=scale)
+        img_bgr = cv2.cvtColor(img_rgb, cv2.COLOR_RGB2BGR)  # Update BGR version too
+    
     st.image(img_rgb, caption='Uploaded Image', use_column_width=True)
 
     # Run detection and classification
     annotated_img = run_inference(img_bgr, img_rgb, yolo_model, vit_model, device)
 
     st.image(annotated_img, caption='Processed Image', use_column_width=True)
+
+    del img_bgr, img_rgb
+    import gc
+    gc.collect()
