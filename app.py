@@ -9,7 +9,7 @@ from utils import run_inference  # We'll define this in utils.py
 
 st.title("Fitness Type Detection with YOLOv8 + ViT")
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("cpu")
 
 @st.cache_resource(show_spinner=True)
 def load_models():
