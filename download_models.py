@@ -36,5 +36,5 @@ def load_vit_model(device):
     download_file(VIT_URL, vit_path)
     model = timm.create_model('vit_base_patch16_224', pretrained=False, num_classes=4)
     model.load_state_dict(torch.load(vit_path, map_location=device))
-    model.to(device).eval()
+    model.to("cpu").eval()
     return model
