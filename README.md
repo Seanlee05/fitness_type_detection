@@ -1,8 +1,8 @@
 # Fitness Type Detection (YOLOv8 + ViT)
 
-This is a ready-to-deploy Streamlit app for detecting fitness posture types using a YOLOv8 object detector and a ViT classifier.
+This is a ready-to-deploy Streamlit app for detecting fitness  types using a YOLOv8 object detector and a ViT classifier.
 
-## 🛠️ Setup
+## Setup
 
 1. Clone or unzip the repo.
 2. Install requirements:
@@ -17,12 +17,10 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-## 📦 Deployment (Render.com)
+## Deployment (Render.com)
 
 - Push this repo to GitHub.
 - Create a free Web Service on [Render](https://render.com)
 - Set:
   - Build command: `pip install -r requirements.txt`
   - Start command: `streamlit run app.py --server.port $PORT`
-
-Enjoy your public app! 🎉
